@@ -1,14 +1,17 @@
-// SPDX-FileCopyrightText: NOI Techpark <digital@noi.bz.it>
-//
-// SPDX-License-Identifier: CC0-1.0
 
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
   mode: 'production',
   entry: './src/index.js',
   output: {
-    filename: 'webcomp-boilerplate.min.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: 'polygon-editor.min.js',
+    path: path.resolve(__dirname, 'docs'), // чтобы встало на github pages
   },
+  plugins: [new HtmlWebpackPlugin({
+    title: "Тестовое для ГК Триумф",
+    template: "./public/index.html"
+  })]
 };
